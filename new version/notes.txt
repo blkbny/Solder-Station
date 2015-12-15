@@ -1,0 +1,23 @@
+To do:
+1. get rid of arduino and switch to more efficient/sutible controller (maybe ATtiny1634 - may run in idle mode)
+2. switch to c code and make/use custom functions for ease of programming/modification
+3. add fault/error detection 
+4. design smaller pcb after aurduino is removed 
+5. get rid of pin 6(jumper 4) b/c it isnt connected to anything (floating)
+6. get rid of A4(SB) b/c it isnt connected to anything(no SB on pot.)
+7. get rid of pin 7(BL:back light) b/c its always low and we can attach it to switch
+8. add logic buffers to protect controller
+9. add isp program circuit
+10. Either switch 100nF(.1uF) caps to 0603 package or switch pads to fit 1206
+11. Check dimensions of 3.5mm aux jack package 
+
+
+What is being used/needed by circuit:
+1. 1 X PWM for power/heat control of Iron
+2. 1 x ADC for temp. in from Iron
+
+3. 1 x ADC for analog in of potentiometer for setting temp.
+
+4. 1 x SPI for display communication
+5. 2 x gpio for DC(data/command) and CS(chip select)
+6. 1 x Jtag 
