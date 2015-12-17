@@ -18,11 +18,21 @@ int main(void)
 
 void init_hardwr(void)
 {
-	//init PWM 
-	//init ADC0
-	//init ADC1
+	//set both PA0 and PA1 as outputs for DC and CS to control LCD
+	DDRA = (0<<DDRA0 | 0<<DDRA1) //init pins PA0-PA1 as outputs
+	
+	//set PC1, PB1, and PB2 as SPI data com
 	//init SPI
-	//init pins PA0-PA1
+	
+	//set PA3 as ADC0 for reading analog temp from iron
+	//init ADC0
+	
+	//set PA4 as ADC1 for reading analog from potent. to set temp
+	//init ADC1
+	
+	//set PA6 as PWM for Iron temp control
+	//init PWM 
+	
 }
 
 
