@@ -1,0 +1,10 @@
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\bin\Debug\SSCommTest.exe
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\bin\Debug\SSCommTest.pdb
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\bin\Debug\SSCommTest.xml
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\SSCommTest.Resources.resources
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\SSCommTest.exe
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\SSCommTest.xml
+C:\Users\Sparky\Desktop\Welding\MIG200J03\Circuits\ReverseEngineering\Altium\GEN2\USB-CAN\USB-CAN\Software\Bootloader\MyApp\SSComm\WindowsApplication1\obj\x86\Debug\SSCommTest.pdb
