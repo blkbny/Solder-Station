@@ -399,8 +399,6 @@ KS-S stereo microphone/headphone jack&lt;p&gt;
 <pin name="V+" x="0" y="7.5" visible="off" length="middle" rot="R270"/>
 <pin name="OUTPUT" x="9" y="0" visible="off" length="middle" rot="R180"/>
 <text x="-9.5" y="5" size="1.27" layer="95">OPA336UA</text>
-<text x="-2.5" y="1" size="1.778" layer="94">-</text>
-<text x="-2.5" y="-2" size="1.016" layer="94">+</text>
 </symbol>
 <symbol name="SJ1-3515">
 <wire x1="6.5" y1="-5.5" x2="0" y2="-5.5" width="0.254" layer="94"/>
@@ -449,26 +447,26 @@ KS-S stereo microphone/headphone jack&lt;p&gt;
 <text x="-6.5" y="0.5" size="1.27" layer="95" rot="R90">PJ-002A</text>
 </symbol>
 <symbol name="ATTINY1634">
-<pin name="PB0/TXD0/ADC5" x="-26.5" y="36" length="middle"/>
-<pin name="PA7/RXD0/ADC4" x="-26.5" y="29.5" length="middle"/>
-<pin name="PA6/ADC3/OC1B" x="-26.5" y="23" length="middle"/>
-<pin name="PA5/ADC2/OC0B" x="-26.5" y="16.5" length="middle"/>
-<pin name="PA4/ADC1/T0" x="-26.5" y="10" length="middle"/>
-<pin name="PA3/ADC0/T1/SNS" x="-26.5" y="3.5" length="middle"/>
-<pin name="PA2/AIN1" x="-26.5" y="-3" length="middle"/>
-<pin name="PA1/AIN0" x="-26.5" y="-9.5" length="middle"/>
-<pin name="PA0/AREF" x="-26.5" y="-16" length="middle"/>
-<pin name="GND" x="-26.5" y="-22.5" length="middle" direction="pwr"/>
-<pin name="RXD1/ADC6/DI/SDA/MOSI/PB1" x="34.5" y="36" length="middle" rot="R180"/>
-<pin name="ADC7/MISO/TXD1/DO/PB2" x="34.5" y="29.5" length="middle" rot="R180"/>
-<pin name="ADC8/OC1A/PB3" x="34.5" y="23" length="middle" rot="R180"/>
-<pin name="ADC9/OC0A/XCK0/PC0" x="34.5" y="16.5" length="middle" rot="R180"/>
-<pin name="ADC10/SCL/USCK/XCK1/PC1" x="34.5" y="10" length="middle" rot="R180"/>
-<pin name="ADC11/CLK0/PC2" x="34.5" y="3.5" length="middle" rot="R180"/>
-<pin name="-RESET/PC3" x="34.5" y="-3" length="middle" rot="R180"/>
-<pin name="XTAL2/PC4" x="34.5" y="-9.5" length="middle" rot="R180"/>
-<pin name="XTAL1/PC5" x="34.5" y="-16" length="middle" rot="R180"/>
-<pin name="VCC" x="34.5" y="-22.5" length="middle" direction="pwr" rot="R180"/>
+<pin name="PB0/TXD0/ADC5" x="-26.48" y="36" length="middle"/>
+<pin name="PA7/RXD0/ADC4" x="-26.48" y="29.46" length="middle"/>
+<pin name="PA6/ADC3/OC1B" x="-26.48" y="22.92" length="middle"/>
+<pin name="PA5/ADC2/OC0B" x="-26.48" y="16.38" length="middle"/>
+<pin name="PA4/ADC1/T0" x="-26.48" y="9.84" length="middle"/>
+<pin name="PA3/ADC0/T1/SNS" x="-26.48" y="3.3" length="middle"/>
+<pin name="PA2/AIN1" x="-26.48" y="-3.24" length="middle"/>
+<pin name="PA1/AIN0" x="-26.48" y="-9.78" length="middle"/>
+<pin name="PA0/AREF" x="-26.48" y="-16.32" length="middle"/>
+<pin name="GND" x="-26.48" y="-22.86" length="middle" direction="pwr"/>
+<pin name="RXD1/ADC6/DI/SDA/MOSI/PB1" x="34.64" y="36" length="middle" rot="R180"/>
+<pin name="ADC7/MISO/TXD1/DO/PB2" x="34.64" y="29.46" length="middle" rot="R180"/>
+<pin name="ADC8/OC1A/PB3" x="34.64" y="22.92" length="middle" rot="R180"/>
+<pin name="ADC9/OC0A/XCK0/PC0" x="34.64" y="16.38" length="middle" rot="R180"/>
+<pin name="ADC10/SCL/USCK/XCK1/PC1" x="34.64" y="9.84" length="middle" rot="R180"/>
+<pin name="ADC11/CLK0/PC2" x="34.64" y="3.3" length="middle" rot="R180"/>
+<pin name="-RESET/PC3" x="34.64" y="-3.24" length="middle" rot="R180"/>
+<pin name="XTAL2/PC4" x="34.64" y="-9.78" length="middle" rot="R180"/>
+<pin name="XTAL1/PC5" x="34.64" y="-16.32" length="middle" rot="R180"/>
+<pin name="VCC" x="34.64" y="-22.86" length="middle" direction="pwr" rot="R180"/>
 <text x="-17.4" y="45.08" size="1.778" layer="95">ATtiny1634</text>
 <wire x1="30" y1="-30" x2="30" y2="42" width="0.254" layer="94"/>
 <wire x1="30" y1="42" x2="-22" y2="42" width="0.254" layer="94"/>
