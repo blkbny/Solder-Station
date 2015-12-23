@@ -2154,7 +2154,7 @@ W = angled&lt;p&gt;
 <wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
 <text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
 <text x="-0.762" y="1.397" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="S" x="-2.5" y="0" visible="off" length="short" direction="pas"/>
 </symbol>
 <symbol name="M">
 <wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
@@ -2510,9 +2510,9 @@ W = angled&lt;p&gt;
 </segment>
 <segment>
 <pinref part="U$5" gate="G$1" pin="VCC"/>
+<pinref part="P+11" gate="1" pin="+5V"/>
 <wire x1="-26.5" y1="-22" x2="-14" y2="-22" width="0.1524" layer="91"/>
 <wire x1="-14" y1="-22" x2="-14" y2="-18" width="0.1524" layer="91"/>
-<pinref part="P+11" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -2530,13 +2530,14 @@ W = angled&lt;p&gt;
 </net>
 <net name="+12V" class="0">
 <segment>
-<wire x1="-124.5" y1="-54.5" x2="-134.5" y2="-54.5" width="0.1524" layer="91"/>
 <wire x1="-134.5" y1="-54.5" x2="-139.5" y2="-54.5" width="0.1524" layer="91"/>
 <wire x1="-139.5" y1="-54.5" x2="-139.5" y2="-65" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="-139.5" y1="-65" x2="-143" y2="-65" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="1" pin="+12V"/>
 <wire x1="-134.5" y1="-51" x2="-134.5" y2="-54.5" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-1" pin="S"/>
+<wire x1="-134.5" y1="-54.5" x2="-124.5" y2="-54.5" width="0.1524" layer="91"/>
 <junction x="-134.5" y="-54.5"/>
 </segment>
 <segment>
@@ -2668,13 +2669,6 @@ W = angled&lt;p&gt;
 </segment>
 </net>
 <net name="MOSI" class="0">
-<segment>
-<pinref part="U$5" gate="G$1" pin="ADC7/MISO/TXD1/DO/PB2"/>
-<wire x1="-26.5" y1="30" x2="4" y2="30" width="0.1524" layer="91"/>
-<wire x1="4" y1="30" x2="4" y2="7.5" width="0.1524" layer="91"/>
-<pinref part="SV4" gate="1" pin="1"/>
-<wire x1="4" y1="7.5" x2="36" y2="7.5" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="U$5" gate="G$1" pin="RXD1/ADC6/DI/SDA/MOSI/PB1"/>
 <wire x1="-26.5" y1="36.5" x2="58" y2="36.5" width="0.1524" layer="91"/>
@@ -2820,9 +2814,25 @@ W = angled&lt;p&gt;
 <wire x1="14.5" y1="-7.5" x2="22" y2="-7.5" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$15" class="0">
+<segment>
+<pinref part="U$5" gate="G$1" pin="ADC7/MISO/TXD1/DO/PB2"/>
+<wire x1="-26.5" y1="30" x2="10.5" y2="30" width="0.1524" layer="91"/>
+<wire x1="10.5" y1="30" x2="10.5" y2="7.5" width="0.1524" layer="91"/>
+<pinref part="SV4" gate="1" pin="1"/>
+<wire x1="10.5" y1="7.5" x2="36" y2="7.5" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,-26.5,-22,U$5,VCC,+5V,,,"/>
+<approved hash="113,1,0.071,0.071,FRAME1,,,,,"/>
+<approved hash="113,1,22.5223,-64.9647,SV2,,,,,"/>
+<approved hash="113,1,43.5,3.53527,SV4,,,,,"/>
+<approved hash="113,1,99.0223,-57.2653,SV6,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
