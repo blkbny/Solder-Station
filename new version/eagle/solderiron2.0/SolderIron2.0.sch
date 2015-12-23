@@ -304,6 +304,18 @@ KS-S stereo microphone/headphone jack&lt;p&gt;
 <rectangle x1="-0.835" y1="3.74" x2="-0.435" y2="5.14" layer="51"/>
 <rectangle x1="-2.105" y1="3.74" x2="-1.705" y2="5.14" layer="51"/>
 </package>
+<package name="4-SIZ">
+<wire x1="-1.6" y1="1.25" x2="-1.6" y2="-1.25" width="0.127" layer="21"/>
+<wire x1="-1.6" y1="-1.25" x2="1.6" y2="-1.25" width="0.127" layer="21"/>
+<wire x1="1.6" y1="-1.25" x2="1.6" y2="1.25" width="0.127" layer="21"/>
+<wire x1="1.6" y1="1.25" x2="-1.6" y2="1.25" width="0.127" layer="21"/>
+<smd name="PIN1" x="-1.15" y="-0.925" dx="1.3" dy="1.05" layer="1"/>
+<smd name="PIN4" x="-1.15" y="0.925" dx="1.3" dy="1.05" layer="1"/>
+<smd name="PIN3" x="1.15" y="0.925" dx="1.3" dy="1.05" layer="1"/>
+<smd name="PIN2" x="1.15" y="-0.925" dx="1.3" dy="1.05" layer="1"/>
+<text x="-3" y="2" size="1.27" layer="25">&gt;name</text>
+<text x="-3" y="-3" size="1.27" layer="27">&gt;value</text>
+</package>
 </packages>
 <symbols>
 <symbol name="L78L05ABUTR">
@@ -438,6 +450,20 @@ KS-S stereo microphone/headphone jack&lt;p&gt;
 <wire x1="30" y1="42" x2="-22" y2="42" width="0.254" layer="94"/>
 <wire x1="-22" y1="42" x2="-22" y2="-30" width="0.254" layer="94"/>
 <wire x1="-22" y1="-30" x2="30" y2="-30" width="0.254" layer="94"/>
+</symbol>
+<symbol name="CX3225GB12000H0KPSC1">
+<wire x1="-1" y1="1.5" x2="-1" y2="-1.5" width="0.254" layer="94"/>
+<wire x1="1" y1="-1.5" x2="1" y2="1.5" width="0.254" layer="94"/>
+<wire x1="1" y1="1.5" x2="-1" y2="1.5" width="0.254" layer="94"/>
+<wire x1="1" y1="-1.5" x2="-1" y2="-1.5" width="0.254" layer="94"/>
+<wire x1="2" y1="1.5" x2="2" y2="0" width="0.254" layer="94"/>
+<wire x1="2" y1="0" x2="2" y2="-1.5" width="0.254" layer="94"/>
+<wire x1="-2" y1="1.5" x2="-2" y2="0" width="0.254" layer="94"/>
+<wire x1="-2" y1="0" x2="-2" y2="-1.5" width="0.254" layer="94"/>
+<wire x1="2" y1="0" x2="2.5" y2="0" width="0.254" layer="94"/>
+<wire x1="-2" y1="0" x2="-2.5" y2="0" width="0.254" layer="94"/>
+<pin name="1" x="-7" y="0" length="middle"/>
+<pin name="2" x="7" y="0" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -584,6 +610,22 @@ KS-S stereo microphone/headphone jack&lt;p&gt;
 <connect gate="G$1" pin="VCC" pad="11"/>
 <connect gate="G$1" pin="XTAL1/PC5" pad="12"/>
 <connect gate="G$1" pin="XTAL2/PC4" pad="13"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CX3225GB12000H0KPSC1">
+<gates>
+<gate name="G$1" symbol="CX3225GB12000H0KPSC1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="4-SIZ">
+<connects>
+<connect gate="G$1" pin="1" pad="PIN1"/>
+<connect gate="G$1" pin="2" pad="PIN3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -2211,6 +2253,10 @@ W = angled&lt;p&gt;
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
+<part name="U$6" library="solderstation" deviceset="CX3225GB12000H0KPSC1" device=""/>
+<part name="C8" library="eagle-ltspice" deviceset="C" device="C1206" value="22p"/>
+<part name="C9" library="eagle-ltspice" deviceset="C" device="C1206" value="22p"/>
+<part name="GND11" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2283,6 +2329,10 @@ W = angled&lt;p&gt;
 <instance part="P+10" gate="1" x="22" y="30.5"/>
 <instance part="P+11" gate="1" x="-14" y="-15.5"/>
 <instance part="GND10" gate="1" x="-93.5" y="-27"/>
+<instance part="U$6" gate="G$1" x="9" y="-11.5" rot="R90"/>
+<instance part="C8" gate="G$1" x="28.5" y="-10"/>
+<instance part="C9" gate="G$1" x="22" y="-10"/>
+<instance part="GND11" gate="1" x="25" y="-22.5"/>
 </instances>
 <busses>
 </busses>
@@ -2379,6 +2429,17 @@ W = angled&lt;p&gt;
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="-87.5" y1="-22" x2="-93.5" y2="-22" width="0.1524" layer="91"/>
 <wire x1="-93.5" y1="-22" x2="-93.5" y2="-24.5" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C9" gate="G$1" pin="2"/>
+<wire x1="22" y1="-15" x2="22" y2="-18" width="0.1524" layer="91"/>
+<pinref part="C8" gate="G$1" pin="2"/>
+<wire x1="22" y1="-18" x2="25" y2="-18" width="0.1524" layer="91"/>
+<wire x1="25" y1="-18" x2="28.5" y2="-18" width="0.1524" layer="91"/>
+<wire x1="28.5" y1="-18" x2="28.5" y2="-15" width="0.1524" layer="91"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="25" y1="-20" x2="25" y2="-18" width="0.1524" layer="91"/>
+<junction x="25" y="-18"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -2614,14 +2675,20 @@ W = angled&lt;p&gt;
 <pinref part="SV4" gate="1" pin="1"/>
 <wire x1="4" y1="7.5" x2="36" y2="7.5" width="0.1524" layer="91"/>
 </segment>
-</net>
-<net name="N$17" class="0">
 <segment>
 <pinref part="U$5" gate="G$1" pin="RXD1/ADC6/DI/SDA/MOSI/PB1"/>
 <wire x1="-26.5" y1="36.5" x2="58" y2="36.5" width="0.1524" layer="91"/>
 <wire x1="58" y1="36.5" x2="58" y2="5" width="0.1524" layer="91"/>
 <pinref part="SV4" gate="1" pin="4"/>
 <wire x1="58" y1="5" x2="51" y2="5" width="0.1524" layer="91"/>
+<label x="62.5" y="37" size="1.778" layer="95"/>
+<wire x1="58" y1="36.5" x2="67.5" y2="36.5" width="0.1524" layer="91"/>
+<junction x="58" y="36.5"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="81" y1="-57.5" x2="75" y2="-57.5" width="0.1524" layer="91"/>
+<label x="75" y="-57" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -2647,12 +2714,6 @@ W = angled&lt;p&gt;
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="81" y1="-52.5" x2="75" y2="-52.5" width="0.1524" layer="91"/>
 <label x="75" y="-52" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$23" class="0">
-<segment>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="81" y1="-57.5" x2="75" y2="-57.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -2728,6 +2789,35 @@ W = angled&lt;p&gt;
 <wire x1="-69" y1="84" x2="-60" y2="84" width="0.1524" layer="91"/>
 <junction x="-69" y="84"/>
 <label x="-64.5" y="84.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U$5" gate="G$1" pin="XTAL2/PC4"/>
+<wire x1="-26.5" y1="-9" x2="-3" y2="-9" width="0.1524" layer="91"/>
+<wire x1="-3" y1="-9" x2="-3" y2="-4.5" width="0.1524" layer="91"/>
+<pinref part="U$6" gate="G$1" pin="2"/>
+<wire x1="-3" y1="-4.5" x2="9" y2="-4.5" width="0.1524" layer="91"/>
+<pinref part="C8" gate="G$1" pin="1"/>
+<wire x1="9" y1="-4.5" x2="28.5" y2="-4.5" width="0.1524" layer="91"/>
+<wire x1="28.5" y1="-4.5" x2="28.5" y2="-7.5" width="0.1524" layer="91"/>
+<junction x="9" y="-4.5"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="U$5" gate="G$1" pin="XTAL1/PC5"/>
+<wire x1="-26.5" y1="-15.5" x2="-20.5" y2="-15.5" width="0.1524" layer="91"/>
+<wire x1="-20.5" y1="-15.5" x2="-20.5" y2="-13.5" width="0.1524" layer="91"/>
+<wire x1="-20.5" y1="-13.5" x2="-4.5" y2="-13.5" width="0.1524" layer="91"/>
+<pinref part="U$6" gate="G$1" pin="1"/>
+<wire x1="9" y1="-18.5" x2="-4.5" y2="-18.5" width="0.1524" layer="91"/>
+<wire x1="-4.5" y1="-18.5" x2="-4.5" y2="-13.5" width="0.1524" layer="91"/>
+<wire x1="9" y1="-18.5" x2="14.5" y2="-18.5" width="0.1524" layer="91"/>
+<wire x1="14.5" y1="-18.5" x2="14.5" y2="-7.5" width="0.1524" layer="91"/>
+<junction x="9" y="-18.5"/>
+<pinref part="C9" gate="G$1" pin="1"/>
+<wire x1="14.5" y1="-7.5" x2="22" y2="-7.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
