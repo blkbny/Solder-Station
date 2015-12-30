@@ -7,11 +7,11 @@
 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_QDTech.h> // Hardware-specific library
+#include <Adafruit_ST7735.h> // Hardware-specific library
 #include <SPI.h>
 
-#include "iron.h"
-#include "stationLOGO.h"
+//#include "iron.h"
+//#include "stationLOGO.h"
 
 
 #define VERSION "1.5"		//Version der Steuerung
@@ -54,7 +54,7 @@
 
 #define PWM_DIV 1024						//default: 64   31250/64 = 2ms
 
-Adafruit_QDTech tft = Adafruit_QDTech(cs_tft, dc, rst);  // Invoke custom library
+ Adafruit_ST7735 tft =  Adafruit_ST7735(cs_tft, dc, rst);  // Invoke custom library
 
 int pwm = 0; //pwm Out Val 0.. 255
 int soll_temp = 300;
@@ -72,22 +72,22 @@ void setup(void) {
 	setPwmFrequency(PWMpin, PWM_DIV);
 	digitalWrite(PWMpin, LOW);
 	
-	tft.init();
+	tft.initB();
 	SPI.setClockDivider(SPI_CLOCK_DIV4);  // 4MHz
 	
 	
 	tft.setRotation(0);	// 0 - Portrait, 1 - Lanscape
-	tft.fillScreen(QDTech_BLACK);
+	tft.fillScreen(ST7735_BLACK);
 	tft.setTextWrap(true);
 	
 	
 	
 	//Print station Logo
-	tft.drawBitmap(2,1,stationLOGO1,124,47,QDTech_GREY);
+	//tft.drawBitmap(2,1,stationLOGO1,124,47,ST7735_WHITE);
 	
-	tft.drawBitmap(3,3,stationLOGO1,124,47,QDTech_YELLOW);		
-	tft.drawBitmap(3,3,stationLOGO2,124,47,Color565(254,147,52));	
-	tft.drawBitmap(3,3,stationLOGO3,124,47,Color565(255,78,0));
+ //tft.drawBitmap(3,3,stationLOGO1,124,47,ST7735_YELLOW);		
+	//tft.drawBitmap(3,3,stationLOGO2,124,47,Color565(254,147,52));	
+	//tft.drawBitmap(3,3,stationLOGO3,124,47,Color565(255,78,0));
 	
 	//BAcklight on
 	digitalWrite(BLpin, HIGH);
@@ -98,27 +98,27 @@ void setup(void) {
 	delay(500);
 	
 	//Print Iron
-	tft.drawBitmap(15,50,iron,100,106,QDTech_GREY);
-	tft.drawBitmap(17,52,iron,100,106,QDTech_YELLOW);
+	//tft.drawBitmap(15,50,iron,100,106,ST7735_WHITE);
+	//tft.drawBitmap(17,52,iron,100,106,ST7735_YELLOW);
 	delay(500);
 	
 	tft.setTextSize(2);
-	tft.setTextColor(QDTech_GREY);
+	tft.setTextColor(ST7735_WHITE);
 	tft.setCursor(70,130);
 	tft.print(VERSION);
 	
 	tft.setTextSize(2);
-	tft.setTextColor(QDTech_YELLOW);
+	tft.setTextColor(ST7735_YELLOW);
 	tft.setCursor(72,132);
 	tft.print(VERSION);
 	
 	tft.setTextSize(1);
-	tft.setTextColor(QDTech_GREY);
+	tft.setTextColor(ST7735_WHITE);
 	tft.setCursor(103,0);
 	tft.print("v");
 	tft.print(VERSION);
 	
-	tft.setTextColor(QDTech_YELLOW);
+	tft.setTextColor(ST7735_YELLOW);
 	tft.setCursor(104,1);
 	tft.print("v");
 	tft.print(VERSION);
@@ -127,8 +127,8 @@ void setup(void) {
 #endif
 	
 	
-	tft.fillRect(0,47,128,125,QDTech_BLACK);
-	tft.setTextColor(QDTech_WHITE);
+	tft.fillRect(0,47,128,125,ST7735_BLACK);
+	tft.setTextColor(ST7735_WHITE);
 
 	tft.setTextSize(1);
 	tft.setCursor(1,84);
@@ -166,9 +166,9 @@ void loop() {
 	//TODO: Put in Funktion
 	tft.setCursor(2,55);
 	if (digitalRead(STANDBYin) == true)
-		tft.setTextColor(QDTech_BLACK);
+		tft.setTextColor(ST7735_BLACK);
 	else
-		tft.setTextColor(QDTech_WHITE);
+		tft.setTextColor(ST7735_WHITE);
 	tft.print("SB");
 	
 	//
@@ -242,7 +242,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 	tft.setTextSize(5);
 	if (tempVAL_OLD != tempVAL){
 		tft.setCursor(30,57);
-		tft.setTextColor(QDTech_BLACK);
+		//tft.setTextColor(QDTech_BLACK);
 		//tft.print(tempSOLL_OLD);
 		//erste Stelle unterschiedlich
 		if ((tempVAL_OLD/100) != (tempVAL/100)){
@@ -260,7 +260,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 			tft.print(tempVAL_OLD%10 );
 		
 		tft.setCursor(30,57);
-		tft.setTextColor(QDTech_WHITE);
+		tft.setTextColor(ST7735_WHITE);
 		
 		if (tempVAL < 100)
 			tft.print(" ");
@@ -271,7 +271,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 		tempDIV = tempDIV > 254 ? tempDIV = 254 : tempDIV < 0 ? tempDIV = 0 : tempDIV;
 		tft.setTextColor(Color565(tempDIV, 255-tempDIV, 0));
 		if (standby_act)
-			tft.setTextColor(QDTech_CYAN);
+			tft.setTextColor(ST7735_CYAN);
 		tft.print(tempVAL);
 		
 		tempVAL_OLD = tempVAL;
@@ -280,7 +280,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 	//if (tempSOLL_OLD != tempSOLL){
 	if ((tempSOLL_OLD+d_tempSOLL < tempSOLL) || (tempSOLL_OLD-d_tempSOLL > tempSOLL)){
 		tft.setCursor(30,102);
-		tft.setTextColor(QDTech_BLACK);
+		//tft.setTextColor(QDTech_BLACK);
 		//tft.print(tempSOLL_OLD);
 		//erste Stelle unterschiedlich
 		if ((tempSOLL_OLD/100) != (tempSOLL/100)){
@@ -299,7 +299,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 		
 		//Neuen Wert in Weiß schreiben
 		tft.setCursor(30,102);
-		tft.setTextColor(QDTech_WHITE);
+		tft.setTextColor(ST7735_WHITE);
 		if (tempSOLL < 100)
 			tft.print(" ");
 		if (tempSOLL <10)
@@ -314,7 +314,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 	tft.setTextSize(2);
 	if (pwmVAL_OLD != pwmVAL){
 		tft.setCursor(80,144);
-		tft.setTextColor(QDTech_BLACK);
+		//tft.setTextColor(QDTech_BLACK);
 		//tft.print(tempSOLL_OLD);
 		//erste stelle Unterscheidlich
 		if ((pwmVAL_OLD/100) != (pwmVAL/100)){
@@ -332,7 +332,7 @@ void writeHEATING(int tempSOLL, int tempVAL, int pwmVAL){
 			tft.print(pwmVAL_OLD%10 );
 		
 		tft.setCursor(80,144);
-		tft.setTextColor(QDTech_WHITE);
+		tft.setTextColor(ST7735_WHITE);
 		if (pwmVAL < 100)
 			tft.print(" ");
 		if (pwmVAL <10)
