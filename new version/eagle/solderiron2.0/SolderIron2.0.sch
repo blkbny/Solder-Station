@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -2225,7 +2225,6 @@ W = angled&lt;p&gt;
 <part name="X2" library="solderstation" deviceset="PG203J" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="U$1" library="solderstation" deviceset="IRF7416PBF" device=""/>
-<part name="P+1" library="supply1" deviceset="+12V" device=""/>
 <part name="U$3" library="solderstation" deviceset="BSS138" device=""/>
 <part name="R7" library="eagle-ltspice" deviceset="R" device="R0603" value="1k"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
@@ -2297,11 +2296,10 @@ W = angled&lt;p&gt;
 <instance part="X1" gate="-2" x="-122.5" y="-52" smashed="yes" rot="R90">
 <attribute name="NAME" x="-121.738" y="-49.46" size="1.524" layer="95" rot="R90"/>
 </instance>
-<instance part="P+6" gate="1" x="-134.5" y="-48.5"/>
+<instance part="P+6" gate="1" x="-134.5" y="-43.42"/>
 <instance part="X2" gate="1" x="147" y="78.5"/>
 <instance part="GND4" gate="1" x="130" y="66"/>
 <instance part="U$1" gate="G$1" x="100" y="87.5" rot="R180"/>
-<instance part="P+1" gate="1" x="107.5" y="104"/>
 <instance part="U$3" gate="G$1" x="72.5" y="72.5" rot="MR0"/>
 <instance part="R7" gate="G$1" x="87.5" y="97" rot="R180"/>
 <instance part="GND5" gate="1" x="80" y="54"/>
@@ -2515,7 +2513,7 @@ W = angled&lt;p&gt;
 <wire x1="-14" y1="-22" x2="-14" y2="-18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="V12" class="0">
 <segment>
 <wire x1="-89" y1="-61" x2="-116.5" y2="-61" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="VIN"/>
@@ -2527,6 +2525,15 @@ W = angled&lt;p&gt;
 <wire x1="-124.5" y1="-61" x2="-124.5" y2="-78" width="0.1524" layer="91"/>
 <junction x="-116.5" y="-61"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="S"/>
+<wire x1="107.5" y1="101.5" x2="107.5" y2="97" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="107.5" y1="97" x2="107.5" y2="92.5" width="0.1524" layer="91"/>
+<wire x1="92.5" y1="97" x2="107.5" y2="97" width="0.1524" layer="91"/>
+<junction x="107.5" y="97"/>
+<label x="106.68" y="104.14" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="+12V" class="0">
 <segment>
@@ -2535,19 +2542,10 @@ W = angled&lt;p&gt;
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="-139.5" y1="-65" x2="-143" y2="-65" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="1" pin="+12V"/>
-<wire x1="-134.5" y1="-51" x2="-134.5" y2="-54.5" width="0.1524" layer="91"/>
+<wire x1="-134.5" y1="-45.92" x2="-134.5" y2="-54.5" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-1" pin="S"/>
 <wire x1="-134.5" y1="-54.5" x2="-124.5" y2="-54.5" width="0.1524" layer="91"/>
 <junction x="-134.5" y="-54.5"/>
-</segment>
-<segment>
-<pinref part="P+1" gate="1" pin="+12V"/>
-<pinref part="U$1" gate="G$1" pin="S"/>
-<wire x1="107.5" y1="101.5" x2="107.5" y2="97" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="107.5" y1="97" x2="107.5" y2="92.5" width="0.1524" layer="91"/>
-<wire x1="92.5" y1="97" x2="107.5" y2="97" width="0.1524" layer="91"/>
-<junction x="107.5" y="97"/>
 </segment>
 </net>
 <net name="POT" class="0">
