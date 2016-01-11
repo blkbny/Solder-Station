@@ -2830,6 +2830,7 @@ W = angled&lt;p&gt;
 <approved hash="113,1,22.5223,-64.9647,SV2,,,,,"/>
 <approved hash="113,1,43.5,3.53527,SV4,,,,,"/>
 <approved hash="113,1,99.0223,-57.2653,SV6,,,,,"/>
+<approved hash="115,1,-102.75,-61,V12,,,,,"/>
 </errors>
 </schematic>
 </drawing>

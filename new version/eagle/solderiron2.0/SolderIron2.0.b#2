@@ -763,7 +763,7 @@ design rules under a new name.</description>
 <attribute name="SPICEMODEL" value="NONE" x="37.76" y="55.58" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="37.76" y="55.58" size="1.778" layer="28" rot="MR180" display="off"/>
 </element>
-<element name="J1" library="solderstation" package="POWERJACK2.1MM" value="DCJ0202" x="45.62" y="61.37" rot="R270"/>
+<element name="J1" library="solderstation" package="POWERJACK2.1MM" value="DCJ0202" x="46.62" y="62.37" rot="R270"/>
 <element name="R1" library="eagle-ltspice" package="R0603" value="1M" x="23.77" y="37.3" rot="MR90">
 <attribute name="SPICEMODEL" value="NONE" x="23.77" y="37.3" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="23.77" y="37.3" size="1.778" layer="28" rot="MR90" display="off"/>
@@ -848,11 +848,11 @@ design rules under a new name.</description>
 <element name="U$4" library="solderstation" package="8-SOIC" value="OPA336UA" x="32.26" y="29.86" rot="MR0"/>
 <element name="U$5" library="solderstation" package="SOIC20" value="ATTINY1634" x="20.6" y="45.86"/>
 <element name="U$6" library="solderstation" package="4-SIZ" value="CX3225GB12000H0KPSC1" x="32.75" y="54.55" rot="R180"/>
-<element name="X1" library="con-molex" package="22-23-2021" value="22-23-2021" x="47.86" y="49.15" rot="R270">
-<attribute name="OC_FARNELL" value="1462926" x="47.86" y="49.15" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MF" value="MOLEX" x="47.86" y="49.15" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="47.86" y="49.15" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="47.86" y="49.15" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="X1" library="con-molex" package="22-23-2021" value="22-23-2021" x="47.86" y="50.15" rot="R270">
+<attribute name="OC_FARNELL" value="1462926" x="47.86" y="50.15" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="MOLEX" x="47.86" y="50.15" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="47.86" y="50.15" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="47.86" y="50.15" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="X2" library="solderstation" package="PG203J" value="PG203J" x="44.32" y="26.11" rot="R180">
 <attribute name="OC_FARNELL" value="unknown" x="44.32" y="26.11" size="1.778" layer="27" rot="R180" display="off"/>
@@ -922,25 +922,25 @@ design rules under a new name.</description>
 <wire x1="38.59" y1="35.17" x2="37.4" y2="41" width="0" layer="19" extent="16-16"/>
 <wire x1="32.895" y1="32.2" x2="38.59" y2="35.17" width="0" layer="19" extent="16-16"/>
 </signal>
-<signal name="N$3">
+<signal name="V12">
 <contactref element="U$2" pad="VIN"/>
 <contactref element="X1" pad="2"/>
 <contactref element="C1" pad="1"/>
-<wire x1="46.6" y1="44" x2="47.86" y2="47.88" width="0" layer="19" extent="16-16"/>
+<contactref element="R7" pad="1"/>
+<contactref element="U$1" pad="S1"/>
+<contactref element="U$1" pad="S3"/>
+<contactref element="U$1" pad="S2"/>
+<wire x1="46.6" y1="44" x2="47.86" y2="48.88" width="0" layer="19" extent="16-16"/>
 <wire x1="47.48" y1="40.185" x2="46.6" y2="44" width="0" layer="19" extent="16-16"/>
+<wire x1="50.23" y1="37.03" x2="47.48" y2="40.185" width="0" layer="19" extent="16-16"/>
+<wire x1="28.48" y1="30.535" x2="47.48" y2="40.185" width="0" layer="19" extent="1-16"/>
+<wire x1="28.48" y1="29.265" x2="28.48" y2="30.535" width="0" layer="19" extent="1-1"/>
+<wire x1="28.48" y1="27.995" x2="28.48" y2="29.265" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+12V">
 <contactref element="J1" pad="1"/>
 <contactref element="X1" pad="1"/>
-<contactref element="U$1" pad="S1"/>
-<contactref element="U$1" pad="S2"/>
-<contactref element="U$1" pad="S3"/>
-<contactref element="R7" pad="1"/>
-<wire x1="47.86" y1="50.42" x2="45.62" y2="54.87" width="0" layer="19" extent="1-1"/>
-<wire x1="50.23" y1="37.03" x2="47.86" y2="50.42" width="0" layer="19" extent="16-16"/>
-<wire x1="28.48" y1="30.535" x2="50.23" y2="37.03" width="0" layer="19" extent="1-16"/>
-<wire x1="28.48" y1="29.265" x2="28.48" y2="30.535" width="0" layer="19" extent="1-1"/>
-<wire x1="28.48" y1="27.995" x2="28.48" y2="29.265" width="0" layer="19" extent="1-1"/>
+<wire x1="47.86" y1="51.42" x2="46.62" y2="55.87" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="POT">
 <contactref element="SV2" pad="2"/>
