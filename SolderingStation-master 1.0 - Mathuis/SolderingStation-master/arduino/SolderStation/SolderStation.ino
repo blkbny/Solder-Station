@@ -77,17 +77,17 @@ void setup(void) {
 	
 	
 	tft.setRotation(0);	// 0 - Portrait, 1 - Lanscape
-	tft.fillScreen(ST7735_WHITE);
+	tft.fillScreen(ST7735_BLACK);
 	tft.setTextWrap(true);
 	
 	
 	
 	//Print station Logo
-	tft.drawBitmap(2,1,stationLOGO1,124,47,ST7735_WHITE);
+	tft.drawBitmap(2,1,stationLOGO1,124,47,ST7735_BLACK);
 	
-  tft.drawBitmap(3,3,stationLOGO1,124,47,ST7735_YELLOW);		
-	tft.drawBitmap(3,3,stationLOGO2,124,47,Color565(254,147,52));	
-	tft.drawBitmap(3,3,stationLOGO3,124,47,Color565(255,78,0));
+  tft.drawBitmap(3,3,stationLOGO1,124,47,Color565(102,255,255));		
+	tft.drawBitmap(3,3,stationLOGO2,124,47,Color565(52,147,254));	
+	tft.drawBitmap(3,3,stationLOGO3,124,47,Color565(0,48,255));
 	
 	//BAcklight on
 	digitalWrite(BLpin, HIGH);
@@ -99,7 +99,7 @@ void setup(void) {
 	
 	//Print Iron
 	tft.drawBitmap(15,50,iron,100,106,ST7735_BLACK);
-	tft.drawBitmap(17,52,iron,100,106,ST7735_YELLOW);
+	tft.drawBitmap(17,52,iron,100,106,Color565(102,255,255));
 	delay(500);
 	
 	tft.setTextSize(2);
@@ -108,7 +108,7 @@ void setup(void) {
 	tft.print(VERSION);
 	
 	tft.setTextSize(2);
-	tft.setTextColor(ST7735_YELLOW);
+	tft.setTextColor(Color565(102,255,255));
 	tft.setCursor(72,132);
 	tft.print(VERSION);
 	
@@ -118,7 +118,7 @@ void setup(void) {
 	tft.print("v");
 	tft.print(VERSION);
 	
-	tft.setTextColor(ST7735_YELLOW);
+	tft.setTextColor(Color565(102,255,255));
 	tft.setCursor(104,1);
 	tft.print("v");
 	tft.print(VERSION);
